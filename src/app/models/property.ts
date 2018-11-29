@@ -5,23 +5,32 @@ export enum PropertyType {
   Apartment = 'Apartment'
 }
 
+export enum Location {
+  Ottawa = 'Ottawa',
+  Toronto = 'Toronto',
+  Montreal = 'Montreal',
+  Vancouver = 'Vancouver',
+  Kingston = 'Kingston',
+  London = 'London'
+}
+
 export class Property {
-  private propertyId: string;
-  private photoURLs: Array<string>;
-  private propertyType: PropertyType;
-  private address: Address;
-  private location: string;
-  private bedrooms: number;
-  private bathrooms: number;
-  private otherRooms: number;
-  private rent: number;
-  private isActive: boolean;
+  propertyId: string;
+  photoURLs: Array<string>;
+  propertyType: PropertyType;
+  address: Address;
+  location: Location;
+  bedrooms: number;
+  bathrooms: number;
+  otherRooms: number;
+  rent: number;
+  isActive: boolean;
 
   constructor(
     photoURLs: Array<string>,
     propertyType: PropertyType,
     address: Address,
-    location: string,
+    location: Location,
     bedrooms: number,
     bathrooms: number,
     otherRooms: number,

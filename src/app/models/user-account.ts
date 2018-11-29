@@ -1,8 +1,8 @@
 export class UserAccount {
-  private userId: string;
-  private firstName: string;
-  private lastName: string;
-  private email: string;
+  userId: string;
+  firstName: string;
+  lastName: string;
+  email: string;
 
   constructor(firstName: string, lastName: string, email: string) {
     this.firstName = firstName;

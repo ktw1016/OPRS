@@ -1,10 +1,10 @@
 export class RentRecord {
-  private customerId: string;
-  private customerEmail: string;
-  private propertyId: string;
-  private rent: number;
-  private rentalDate: Date;
-  private rentalTime: Date;
+  customerId: string;
+  customerEmail: string;
+  propertyId: string;
+  rent: number;
+  rentalDate: Date;
+  rentalTime: Date;
 
   constructor(
     customerId: string,

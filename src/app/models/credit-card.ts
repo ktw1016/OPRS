@@ -4,11 +4,11 @@ export enum CardType {
 }
 
 export class CreditCard {
-  private cardType: CardType;
-  private cardNumber: string;
-  private cardHolder: string;
-  private expiryMonth: number;
-  private expiryYear: number;
+  cardType: CardType;
+  cardNumber: string;
+  cardHolder: string;
+  expiryMonth: number;
+  expiryYear: number;
 
   constructor(
     cardType: CardType,
