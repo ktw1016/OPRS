@@ -12,6 +12,7 @@ import { PropertyListComponent } from './components/property-list/property-list.
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, LoginComponent, PropertyListComponent],
@@ -24,7 +25,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
