@@ -1,9 +1,9 @@
 <div class="ui container">
   <h1 class="header">Online Property Rental Service</h1>
-  <h2 class="header2">Property Listings</h2>
+  <h2 class="header2">Property Listings:</h2>
   <ul class="properties">
     <li *ngFor="let property of properties | async">
-      {{ property.type}}
+      {{property.type}}
     </li>
   </ul>
 </div>
