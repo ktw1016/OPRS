@@ -15,9 +15,18 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { PropertyComponent } from './components/property/property.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AccountService } from './services/account.service';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, LoginComponent, PropertyListComponent, PropertyComponent, RegisterComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    LoginComponent,
+    PropertyListComponent,
+    PropertyComponent,
+    RegisterComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -28,7 +37,7 @@ import { RegisterComponent } from './components/register/register.component';
     AngularFireAuthModule,
     AngularFirestoreModule
   ],
-  providers: [],
+  providers: [AccountService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
