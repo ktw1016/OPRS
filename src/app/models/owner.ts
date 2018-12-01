@@ -5,7 +5,10 @@ export class Owner extends UserAccount {
   propertyList: Array<Property>;
 
   constructor(firstName: string, lastName: string, email: string) {
-    super(firstName, lastName, email);
+    super();
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
     this.propertyList = [];
   }
 }
