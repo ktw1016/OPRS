@@ -1,0 +1,14 @@
+<div class="ui container">
+  <h1 class="header">Sign up</h1>
+  <form class="ui form" (ngSubmit)="register()">
+    <div class="field">
+      <label>Email</label>
+      <input [(ngModel)]="email" type="email" name="first-name" placeholder="john@apple.com" />
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <input [(ngModel)]="password" type="password" name="last-name" placeholder="Password" />
+    </div>
+    <button class="ui fluid primary button" type="submit">Register</button>
+  </form>
+</div>
