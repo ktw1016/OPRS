@@ -3,7 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fire
 import { Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-
+import { Customer } from 'src/app/models/customer';
 
 
 @Component({
@@ -13,8 +13,8 @@ import { Router } from '@angular/router';
 })
 
 export class AccountComponent implements OnInit {
-  private customersCollection: AngularFirestoreCollection<Customers>;
-  account: Observable<Customers | null>;
+  private customersCollection: AngularFirestoreCollection<Customer>;
+  account: Observable<Customer | null>;
   userAuthId: string;
 
 
