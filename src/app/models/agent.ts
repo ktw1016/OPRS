@@ -9,7 +9,10 @@ export class Agent extends UserAccount {
     email: string,
     agency: string
   ) {
-    super(firstName, lastName, email);
+    super();
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
     this.agency = agency;
   }
 }

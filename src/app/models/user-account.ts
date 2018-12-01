@@ -3,6 +3,7 @@ export class UserAccount {
   firstName: string;
   lastName: string;
   email: string;
+  type: string;
 
   constructor() {}
 }
