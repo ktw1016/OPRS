@@ -15,9 +15,10 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { PropertyComponent } from './components/property/property.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AccountComponent } from './components/account/account.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, LoginComponent, PropertyListComponent, PropertyComponent, RegisterComponent],
+  declarations: [AppComponent, NavbarComponent, LoginComponent, PropertyListComponent, PropertyComponent, RegisterComponent, AccountComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
