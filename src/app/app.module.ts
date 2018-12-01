@@ -12,11 +12,12 @@ import { PropertyListComponent } from './components/property-list/property-list.
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { PropertyComponent } from './components/property/property.component';
 import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, LoginComponent, PropertyListComponent, RegisterComponent],
+  declarations: [AppComponent, NavbarComponent, LoginComponent, PropertyListComponent, PropertyComponent, RegisterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -24,9 +25,10 @@ import { RegisterComponent } from './components/register/register.component';
     FormsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
-  providers: [AngularFirestore],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
