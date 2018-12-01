@@ -9,6 +9,7 @@ export class Owner extends UserAccount {
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
+    this.type = 'Owner';
     this.propertyList = [];
   }
 }
