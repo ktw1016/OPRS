@@ -13,7 +13,10 @@ export class Customer extends UserAccount {
     email: string,
     maxRent: number
   ) {
-    super(firstName, lastName, email);
+    super();
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
     this.maxRent = maxRent;
     this.creditCard = null;
     this.visitationList = [];
