@@ -18,6 +18,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { AccountComponent } from './components/account/account.component';
 import { AccountService } from './services/account.service';
 import { AuthService } from './services/auth.service';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AuthService } from './services/auth.service';
     PropertyListComponent,
     PropertyComponent,
     RegisterComponent,
-    AccountComponent
+    AccountComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

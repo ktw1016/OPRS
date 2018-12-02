@@ -9,6 +9,7 @@
       <label>Password</label>
       <input [(ngModel)]="password" type="password" name="last-name" placeholder="Password" />
     </div>
-    <button class="ui fluid primary button" type="submit">Login</button>
+    <button class="ui green button" type="submit">Log in</button>
+    <button class="ui button" type="submit" [routerLink]="['/register']">Register</button>
   </form>
 </div>

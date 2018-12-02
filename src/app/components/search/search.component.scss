@@ -1,0 +1,19 @@
+body,
+html {
+  position: relative;
+}
+.inlineinput div {
+    display: inline;
+}
+.ui.container {
+  position: absolute;
+  width: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header {
+  text-align: center;
+  font-size: 2em;
+}
