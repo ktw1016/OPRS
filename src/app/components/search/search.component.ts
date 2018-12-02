@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-search',
@@ -14,7 +13,6 @@ export class SearchComponent implements OnInit {
   }
 
   search(){
-
 
     console.log(document.getElementById("from-amount").value);
     console.log(document.getElementById("to-amount").value);

@@ -7,17 +7,14 @@
         [(ngModel)]="propertyId"
         type="text"
         name="property-id"
-        placeholder=""
       />
     </div>
     <div class="field">
       <label>Property Type</label>
-      <input
-        [(ngModel)]="propertyType"
-        type="text"
-        name="property-type"
-        placeholder="House"
-      />
+      <select [(ngModel)]="propertyType" class="ui dropdown" name="property-type">
+        <option value="House">House</option>
+        <option value="Apartment">Apartment</option>
+      </select>
     </div>
 
     <div class="field">
