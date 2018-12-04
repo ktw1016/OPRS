@@ -1,20 +1,17 @@
 <div class="ui borderless top sticky menu">
   <div class="ui container">
-    <div class="left menu">
-      <div class="item" [routerLink]="['']">
-        <i class="material-icons">home</i>
-      </div>
-      <h3 class="header item">Online Property Rental Service</h3>
-    </div>
+    <a class="header item" [routerLink]="['']">
+      Online Property Rental Service
+    </a>
+    <a class="item" [routerLink]="['/search']">
+      <i class="search icon"></i>Search
+    </a>
     <div class="right menu">
       <div class="item" [routerLink]="['/login']">
         <div class="ui green button">Login</div>
       </div>
       <div class="item" [routerLink]="['/register']">
         <div class="ui green button">Register</div>
-      </div>
-      <div class="item" [routerLink]="['/search']">
-        <i class="material-icons">search</i>
       </div>
     </div>
   </div>
