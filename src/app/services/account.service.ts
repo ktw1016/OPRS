@@ -1,39 +1,26 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Customer } from '../models/customer';
-import { Owner } from '../models/owner';
 import { Observable } from 'rxjs';
+import { UserAccount } from '../models/user-account';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
 
-  private customerCollection: AngularFirestoreCollection<Customer>;
-  private ownerCollection: AngularFirestoreCollection<Owner>;
-  customers: Observable<Customer[]>;
-  owners: Observable<Owner[]>;
+  private accountCollection: AngularFirestoreCollection<UserAccount>;
+  accounts: Observable<UserAccount[]>;
 
   constructor(public afs: AngularFirestore) {
-    this.customerCollection = afs.collection<Customer>('customers');
-    this.ownerCollection = afs.collection<Owner>('owners');
-    this.customers = this.customerCollection.valueChanges();
-    this.owners = this.ownerCollection.valueChanges();
+    this.accountCollection = afs.collection<UserAccount>('accounts');
+    this.accounts = this.accountCollection.valueChanges();
   }
 
-  addCustomer(customer: Customer) {
-    this.customerCollection.doc(customer.userId).set(Object.assign({}, customer));
+  addAccount(account: UserAccount) {
+    this.accountCollection.doc(account.userId).set(Object.assign({}, account));
   }
 
-  addOwner(owner: Owner) {
-    this.ownerCollection.doc(owner.userId).set(Object.assign({}, owner));
+  getAccount(id: string): Observable<any> {
+    return this.accountCollection.doc(id).valueChanges();
   }
-
-  getCustomer(id: string): Observable<any> {
-    return this.customerCollection.doc(id).valueChanges();
-  }
-  getOwner(id: string): Observable<any> {
-    return this.ownerCollection.doc(id).valueChanges();
-  }
-
 }

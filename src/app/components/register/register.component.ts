@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
             this.maxRent
           );
           customer.userId = newUser.user.uid;
-          this.accountService.addCustomer(customer);
+          this.accountService.addAccount(customer);
           this.router.navigate(['/']);
         } else {
           const owner = new Owner(
@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
             this.email
           );
           owner.userId = newUser.user.uid;
-          this.accountService.addOwner(owner);
+          this.accountService.addAccount(owner);
           this.router.navigate(['/']);
         }
       });
