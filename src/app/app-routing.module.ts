@@ -5,13 +5,15 @@ import { PropertyListComponent } from './components/property-list/property-list.
 import { RegisterComponent } from './components/register/register.component';
 import { AccountComponent } from './components/account/account.component';
 import { SearchComponent } from './components/search/search.component';
+import { AddPropertyComponent } from './components/add-property/add-property.component';
 
 const routes: Routes = [
   { path: '', component: PropertyListComponent },
   { path: 'search', component: SearchComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'account', component: AccountComponent}
+  { path: 'account', component: AccountComponent },
+  { path: 'add-property', component: AddPropertyComponent }
 ];
 
 @NgModule({

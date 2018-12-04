@@ -1,0 +1,69 @@
+<div class="ui container">
+  <h2 class="header">Add Property</h2>
+  <form class="ui form" (ngSubmit)="addProperty()">
+    <div class="field">
+      <label>Property Type</label>
+      <select class="ui dropdown">
+        <option value="House">House</option>
+        <option value="Apartment">Apartment</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Address</label>
+      <div class="fields">
+        <div class="twelve wide field">
+          <input type="text" name="address" placeholder="Street Address" />
+        </div>
+        <div class="four wide field">
+          <input type="text" name="postalCode" placeholder="Postal Code" />
+        </div>
+      </div>
+      <div class="equal width fields">
+        <div class="field">
+          <input type="text" name="province" placeholder="Province" />
+        </div>
+        <div class="field">
+          <input type="text" name="country" placeholder="Country" />
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label>Location</label>
+      <select class="ui dropdown">
+        <option value="Ottawa">Ottawa</option>
+        <option value="Toronto">Toronto</option>
+        <option value="Montreal">Montreal</option>
+        <option value="Vancouver">Vancouver</option>
+        <option value="Kingston">Kingston</option>
+        <option value="London">London</option>
+      </select>
+    </div>
+    <div class="three fields">
+      <div class="field">
+        <label>Bedrooms</label>
+        <input type="number" name="bedrooms" placeholder="3" />
+      </div>
+      <div class="field">
+        <label>Bathrooms</label>
+        <input type="number" name="bathrooms" placeholder="2" />
+      </div>
+      <div class="field">
+        <label>Other Rooms</label>
+        <input type="number" name="other-rooms" placeholder="2" />
+      </div>
+    </div>
+    <div class="field">
+      <label>Rent</label>
+      <div class="ui right labeled input">
+        <label for="amount" class="ui label">$</label>
+        <input type="number" placeholder="Amount" name="rent" id="amount" />
+        <div class="ui basic label">.00</div>
+      </div>
+    </div>
+    <div class="field">
+      <label>Photos</label>
+      <input type="file" name="pic" accept="image/*" multiple />
+    </div>
+    <button class="ui fluid primary button" type="submit">Add Property</button>
+  </form>
+</div>

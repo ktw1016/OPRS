@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,6 +18,7 @@ import { AccountComponent } from './components/account/account.component';
 import { AccountService } from './services/account.service';
 import { AuthService } from './services/auth.service';
 import { SearchComponent } from './components/search/search.component';
+import { AddPropertyComponent } from './components/add-property/add-property.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,8 @@ import { SearchComponent } from './components/search/search.component';
     PropertyComponent,
     RegisterComponent,
     AccountComponent,
-    SearchComponent
+    SearchComponent,
+    AddPropertyComponent
   ],
   imports: [
     BrowserModule,
