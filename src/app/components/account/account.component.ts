@@ -3,7 +3,8 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fire
 import { Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { Customer } from 'src/app/models/customer';
+import { UserAccount } from 'src/app/models/user-account';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -13,33 +14,16 @@ import { Customer } from 'src/app/models/customer';
 })
 
 export class AccountComponent implements OnInit {
-  private customersCollection: AngularFirestoreCollection<Customer>;
-  account: Observable<Customer | null>;
-  userAuthId: string;
-
+  currUser: UserAccount;
 
   // get the userid of the currently signed in user
-  constructor(public afAuth: AngularFireAuth, public router: Router) {
-
+  constructor (public as: AuthService) {
   }
 
 
   ngOnInit() {
-  }
-
-  // this should get all account info, specified by the account document id
-  getAccount() {
-    if (this.afAuth.auth.currentUser) {
-      this.userAuthId = this.afAuth.auth.currentUser.uid;
-    }
-
-    return this.customersCollection.doc(this.userAuthId).ref.get().then(function(doc) {
-      if (doc.exists) {
-          console.log("Document data:", doc.data());
-      } else {
-          console.log("No such document!");
-      }
-    })
+    this.currUser = JSON.parse(localStorage.getItem('user'));
+    console.log(this.currUser);
   }
 
 }
