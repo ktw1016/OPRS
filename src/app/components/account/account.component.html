@@ -1,6 +1,38 @@
 <div class="ui container">
   <h2 class="header">Your Account</h2>
   <div class="ui three column grid center aligned">
-    {{ currUser.userId }}
+    <div *ngIf="isCustomer">
+      <div>
+        <label>Email: </label> {{currUser.userId}}
+      </div>
+      <div>
+        <label>First Name: </label> {{currUser.firstName}}
+      </div>
+      <div>
+        <label>Last Name: </label> {{currUser.lastName}}
+      </div>
+      <div>
+        <label>Max Rent: </label> {{currUser.maxRent}}
+      </div>
+      <div>
+        <label>Credit Card: </label> {{currUser.creditCard}}
+      </div>
+    </div>
+
+    <div *ngIf="!isCustomer">
+      <div>
+        <label>Email: </label> {{currUser.userId}}
+      </div>
+      <div>
+        <label>First Name: </label> {{currUser.firstName}}
+      </div>
+      <div>
+        <label>Last Name: </label> {{currUser.lastName}}
+      </div>
+      <div class="ui green button" [routerLink]="['/view-owner-property-list']">View Property List</div>
+    </div>
+
+
+
   </div>
 </div>
