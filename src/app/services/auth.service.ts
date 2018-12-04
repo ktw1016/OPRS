@@ -10,10 +10,13 @@ import { Customer } from '../models/customer';
   providedIn: 'root'
 })
 export class AuthService {
-
   currentUser: UserAccount;
 
-  constructor(public afAuth: AngularFireAuth, public router: Router, public accountService: AccountService) {}
+  constructor(
+    public afAuth: AngularFireAuth,
+    public router: Router,
+    public accountService: AccountService
+  ) {}
 
   createAccount(email: string, password: string) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password);
@@ -24,15 +27,11 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-    this.afAuth.auth.signInWithEmailAndPassword(email, password).then((value) => {
-      this.accountService.getAccount(value.user.uid).subscribe((user) => {
-        if (user.type === 'Owner') {
-          this.currentUser = user as Owner;
-        } else {
-          this.currentUser = user as Customer;
-        }
-        this.router.navigate(['/']);
+    this.afAuth.auth.signInWithEmailAndPassword(email, password).then(value => {
+      this.accountService.getAccount(value.user.uid).subscribe(user => {
+        localStorage.setItem('user', JSON.stringify(user));
       });
+      this.router.navigate(['/']);
     });
   }
 
