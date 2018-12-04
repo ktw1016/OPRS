@@ -17,10 +17,10 @@ export class AccountService {
   }
 
   addAccount(account: UserAccount) {
-    this.accountCollection.doc(account.userId).set(Object.assign({}, account));
+    this.accountCollection.doc<UserAccount>(account.userId).set(account);
   }
 
-  getAccount(id: string): Observable<any> {
-    return this.accountCollection.doc(id).valueChanges();
+  getAccount(id: string): Observable<UserAccount> {
+    return this.accountCollection.doc<UserAccount>(id).valueChanges();
   }
 }
