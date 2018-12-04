@@ -15,6 +15,7 @@ import { AuthService } from 'src/app/services/auth.service';
 
 export class AccountComponent implements OnInit {
   currUser: UserAccount;
+  isCustomer: Boolean;
 
   // get the userid of the currently signed in user
   constructor (public as: AuthService) {
@@ -23,6 +24,11 @@ export class AccountComponent implements OnInit {
 
   ngOnInit() {
     this.currUser = JSON.parse(localStorage.getItem('user'));
+    if (this.currUser.type === 'Customer') {
+      this.isCustomer = true;
+    } else {
+      this.isCustomer = false;
+    }
     console.log(this.currUser);
   }
 

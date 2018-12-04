@@ -19,6 +19,7 @@ import { AccountService } from './services/account.service';
 import { AuthService } from './services/auth.service';
 import { SearchComponent } from './components/search/search.component';
 import { AddPropertyComponent } from './components/add-property/add-property.component';
+import { OwnerPropertyListComponent } from './components/owner-property-list/owner-property-list.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AddPropertyComponent } from './components/add-property/add-property.com
     RegisterComponent,
     AccountComponent,
     SearchComponent,
-    AddPropertyComponent
+    AddPropertyComponent,
+    OwnerPropertyListComponent
   ],
   imports: [
     BrowserModule,
