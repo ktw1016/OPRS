@@ -1,70 +1,76 @@
 <div class="ui container">
   <h1 class="header">Search</h1>
-  <form class="ui form" (ngSubmit)="search()" #registerForm="ngForm">
+  <form class="ui form" (ngSubmit)="search()">
     <div class="field">
-      <label>Property ID</label>
-      <input
-        [(ngModel)]="propertyId"
-        type="text"
-        name="property-id"
-      />
+      <label>Location</label>
+      <select [(ngModel)]="location" class="ui dropdown" name="location">
+        <option value="Ottawa">Ottawa</option>
+        <option value="Toronto">Toronto</option>
+        <option value="Montreal">Montreal</option>
+        <option value="Vancouver">Vancouver</option>
+        <option value="Kingston">Kingston</option>
+        <option value="London">London</option>
+      </select>
     </div>
     <div class="field">
       <label>Property Type</label>
-      <select [(ngModel)]="propertyType" class="ui dropdown" name="property-type">
+      <select
+        [(ngModel)]="propertyType"
+        class="ui dropdown"
+        name="property-type"
+      >
         <option value="House">House</option>
         <option value="Apartment">Apartment</option>
       </select>
     </div>
 
-    <div class="field">
-      <label>Number of Bedrooms</label>
-      <input
-        [(ngModel)]="bedrooms"
-        type="number"
-        name="bedrooms"
-        placeholder=3
-      />
-    </div>
+    <div class="fields">
+      <div class="field">
+        <label>Bedrooms</label>
+        <input
+          [(ngModel)]="bedrooms"
+          type="number"
+          name="bedrooms"
+          placeholder="3"
+        />
+      </div>
 
-    <div class="field">
-      <label>Number of Bathrooms</label>
-      <input
-        [(ngModel)]="bathrooms"
-        type="number"
-        name="bathrooms"
-        placeholder=2
-      />
-    </div>
+      <div class="field">
+        <label>Bathrooms</label>
+        <input
+          [(ngModel)]="bathrooms"
+          type="number"
+          name="bathrooms"
+          placeholder="2"
+        />
+      </div>
 
-    <div class="field">
-      <label>Number of Other Rooms</label>
-      <input
-        [(ngModel)]="otherRooms"
-        type="number"
-        name="other-rooms"
-        placeholder=2
-      />
+      <div class="field">
+        <label>Other Rooms</label>
+        <input
+          [(ngModel)]="otherRooms"
+          type="number"
+          name="other-rooms"
+          placeholder="2"
+        />
+      </div>
     </div>
-
-    <div class="field">
-      <label>Active Properties</label>
-      <input [(ngModel)]="isActive" type="radio" name="is-active" value="true" checked>Only active properties<br>
-      <input [(ngModel)]="isActive" type="radio" name="is-active" value="false">Show All<br>
-    </div>
-
 
     <div class="field">
       <label>Rent</label>
-
-      <span class="inlineinput">
-        <div class="ui left labeled input">
-            <input type="number" placeholder="From" name="from-rent" id="from-amount">
-        </div>-
-        <div class="ui right labeled input">
-            <input type="number" placeholder="To" name="to-rent" id="to-amount">
+      <div class="two fields">
+        <div class="field">
+          <input
+            type="number"
+            placeholder="From"
+            name="from-rent"
+            id="from-amount"
+          />
         </div>
-      </span>
+        <div class="field">
+          <input type="number" placeholder="To" name="to-rent" id="to-amount" />
+        </div>
+      </div>
     </div>
     <button class="ui fluid primary button" type="submit">Search</button>
   </form>

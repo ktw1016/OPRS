@@ -6,15 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
+  location;
+  propertyType;
+  bedrooms;
+  bathrooms;
+  otherRooms;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  search(){
-
-    console.log(document.getElementById("from-amount").value);
-    console.log(document.getElementById("to-amount").value);
-  }
+  search() {}
 }
