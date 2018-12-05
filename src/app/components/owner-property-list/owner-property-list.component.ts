@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserAccount } from 'src/app/models/user-account';
 import { AuthService } from 'src/app/services/auth.service';
 import { PropertyService } from 'src/app/services/property.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-owner-property-list',
