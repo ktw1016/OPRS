@@ -20,6 +20,7 @@ import { AuthService } from './services/auth.service';
 import { SearchComponent } from './components/search/search.component';
 import { AddPropertyComponent } from './components/add-property/add-property.component';
 import { OwnerPropertyListComponent } from './components/owner-property-list/owner-property-list.component';
+import { PropertyService } from './services/property.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { OwnerPropertyListComponent } from './components/owner-property-list/own
     AngularFireAuthModule,
     AngularFirestoreModule
   ],
-  providers: [AccountService, AuthService],
+  providers: [AccountService, AuthService, PropertyService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
