@@ -17,9 +17,7 @@
         <div class="ui green button">Account</div>
       </div>
       <div *ngIf="signedIn" class="item">
-        <form class="ui form" (ngSubmit)="logout()">
-          <button class="ui green button" type="submit" [routerLink]="['/login']">Sign Out</button>
-        </form>
+        <div class="ui green button" (click)="signOut()">Sign Out</div>
       </div>
     </div>
   </div>
