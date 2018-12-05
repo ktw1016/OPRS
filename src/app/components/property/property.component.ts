@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Property } from 'src/app/models/property';
+import { PropertyService } from 'src/app/services/property.service';
 
 @Component({
   selector: 'app-property',
@@ -10,9 +11,8 @@ export class PropertyComponent implements OnInit {
 
   @Input() property: Property;
 
-  constructor() { }
+  constructor(public propertyService: PropertyService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

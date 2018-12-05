@@ -24,6 +24,7 @@ export class PropertyService {
 
   addProperty(property: Property) {
     const id = this.afs.createId();
+    console.log(id);
     property.propertyId = id;
     this.propertyCollection.doc<Property>(id).set(Object.assign({}, property));
   }
