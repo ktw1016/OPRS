@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {PropertyType, Location } from '../../models/property';
+import { Property } from '../../models/property';
+import { PropertyService } from 'src/app/services/property.service';
 
 @Component({
   selector: 'app-add-property',
@@ -8,15 +9,13 @@ import {PropertyType, Location } from '../../models/property';
 })
 export class AddPropertyComponent implements OnInit {
 
-  propertyEnum: PropertyType;
-  locationEnum: Location;
+  property: Property = new Property();
+  constructor(public propertyService: PropertyService) {}
 
-  rent: number;
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  addProperty() {
+    console.log(this.property);
+    this.propertyService.addProperty(this.property);
   }
-
-  addProperty() {}
-
 }

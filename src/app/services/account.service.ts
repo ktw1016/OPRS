@@ -17,7 +17,7 @@ export class AccountService {
   }
 
   addAccount(account: UserAccount) {
-    this.accountCollection.doc<UserAccount>(account.userId).set(account);
+    this.accountCollection.doc<UserAccount>(account.userId).set(Object.assign({}, account));
   }
 
   getAccount(id: string): Observable<UserAccount> {

@@ -4,7 +4,6 @@ import { Property } from './property';
 
 export class Customer extends UserAccount {
   maxRent: number;
-  creditCard: CreditCard;
   visitationList: Array<Property>;
 
   constructor(
@@ -18,8 +17,6 @@ export class Customer extends UserAccount {
     this.lastName = lastName;
     this.email = email;
     this.maxRent = maxRent;
-    this.type = 'Customer';
-    this.creditCard = null;
-    this.visitationList = [];
+
   }
 }

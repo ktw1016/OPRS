@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  AngularFirestore,
-  AngularFirestoreCollection
-} from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
 import { Property } from 'src/app/models/property';
+import { PropertyService } from 'src/app/services/property.service';
 
 @Component({
   selector: 'app-property-list',
@@ -12,12 +8,13 @@ import { Property } from 'src/app/models/property';
   styleUrls: ['./property-list.component.scss']
 })
 export class PropertyListComponent implements OnInit {
-  private propertiesCollection: AngularFirestoreCollection<Property>;
-  properties: Observable<Property[]>;
 
-  constructor(private afs: AngularFirestore) {
-    this.propertiesCollection = afs.collection<Property>('properties');
-    this.properties = this.propertiesCollection.valueChanges();
+  properties: Property[];
+
+  constructor(public propertyService: PropertyService) {
+    this.propertyService.getAllProperties().subscribe((values) => {
+      this.properties = values;
+    });
   }
 
   ngOnInit() {}
