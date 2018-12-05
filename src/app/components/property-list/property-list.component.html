@@ -1,8 +1,9 @@
 <div class="ui container">
   <h2 class="header">Property Listings</h2>
   <div class="ui three column grid center aligned">
-    <div *ngFor="let property of properties">
-      <app-property [property]="property"></app-property>
-    </div>
+    <app-property
+      *ngFor="let property of properties"
+      [property]="property"
+    ></app-property>
   </div>
 </div>

@@ -30,12 +30,6 @@ export class PropertyService {
     console.log(this.propertyCollection.doc<Property>(id));
   }
 
-  editProperty(property: Property){}
-
-  setIsActive(property: Property, isActive: boolean){
-    property.isActive = isActive;
-  }
-
   getProperty(id: string): Observable<Property> {
     return this.propertyCollection.doc<Property>(id).valueChanges();
   }

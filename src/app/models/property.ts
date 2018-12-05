@@ -1,5 +1,3 @@
-import { Address } from './address';
-
 export enum PropertyType {
   House = 'House',
   Apartment = 'Apartment'
@@ -18,7 +16,10 @@ export class Property {
   propertyId: string;
   photoURLs: Array<string>;
   propertyType: PropertyType;
-  address: Address;
+  streetName: string;
+  postalCode: string;
+  province: string;
+  country: string;
   location: Location;
   bedrooms: number;
   bathrooms: number;
@@ -26,24 +27,7 @@ export class Property {
   rent: number;
   isActive: boolean;
 
-  constructor(
-    photoURLs: Array<string>,
-    propertyType: PropertyType,
-    address: Address,
-    location: Location,
-    bedrooms: number,
-    bathrooms: number,
-    otherRooms: number,
-    rent: number
-  ) {
-    this.photoURLs = photoURLs;
-    this.propertyType = propertyType;
-    this.address = address;
-    this.location = location;
-    this.bedrooms = bedrooms;
-    this.bathrooms = bathrooms;
-    this.otherRooms = otherRooms;
-    this.rent = rent;
+  constructor() {
     this.isActive = true;
   }
 }
