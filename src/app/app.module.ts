@@ -21,6 +21,7 @@ import { SearchComponent } from './components/search/search.component';
 import { AddPropertyComponent } from './components/add-property/add-property.component';
 import { OwnerPropertyListComponent } from './components/owner-property-list/owner-property-list.component';
 import { PropertyService } from './services/property.service';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { PropertyService } from './services/property.service';
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireStorageModule
   ],
   providers: [AccountService, AuthService, PropertyService],
   bootstrap: [AppComponent]
