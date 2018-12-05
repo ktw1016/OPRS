@@ -21,6 +21,7 @@ import { SearchComponent } from './components/search/search.component';
 import { AddPropertyComponent } from './components/add-property/add-property.component';
 import { OwnerPropertyListComponent } from './components/owner-property-list/owner-property-list.component';
 import { PropertyService } from './services/property.service';
+import { SearchListComponent } from './components/search-list/search-list.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { PropertyService } from './services/property.service';
     AccountComponent,
     SearchComponent,
     AddPropertyComponent,
-    OwnerPropertyListComponent
+    OwnerPropertyListComponent,
+    SearchListComponent
   ],
   imports: [
     BrowserModule,
