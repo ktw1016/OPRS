@@ -24,8 +24,16 @@ export class PropertyService {
 
   addProperty(property: Property) {
     const id = this.afs.createId();
+    console.log(id);
     property.propertyId = id;
-    this.propertyCollection.doc<Property>(id).set(property);
+    this.propertyCollection.doc<Property>(id).set(Object.assign({}, property));
+    console.log(this.propertyCollection.doc<Property>(id));
+  }
+
+  editProperty(property: Property){}
+
+  setIsActive(property: Property, isActive: boolean){
+    property.isActive = isActive;
   }
 
   getProperty(id: string): Observable<Property> {

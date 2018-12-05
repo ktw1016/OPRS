@@ -3,7 +3,7 @@
   <form class="ui form" (ngSubmit)="addProperty()">
     <div class="field">
       <label>Property Type</label>
-      <select class="ui dropdown">
+      <select class="ui dropdown" name="property-type" [(ngModel)]="propertyEnum">
         <option value="House">House</option>
         <option value="Apartment">Apartment</option>
       </select>
@@ -12,24 +12,24 @@
       <label>Address</label>
       <div class="fields">
         <div class="twelve wide field">
-          <input type="text" name="address" placeholder="Street Address" />
+          <input type="text" name="address" [(ngModel)]="streetAddress" placeholder="Street Address" />
         </div>
         <div class="four wide field">
-          <input type="text" name="postalCode" placeholder="Postal Code" />
+          <input type="text" name="postalCode" [(ngModel)]="postalCode" placeholder="Postal Code" />
         </div>
       </div>
       <div class="equal width fields">
         <div class="field">
-          <input type="text" name="province" placeholder="Province" />
+          <input type="text" name="province" [(ngModel)]="province" placeholder="Province" />
         </div>
         <div class="field">
-          <input type="text" name="country" placeholder="Country" />
+          <input type="text" name="country" [(ngModel)]="country" placeholder="Country" />
         </div>
       </div>
     </div>
     <div class="field">
       <label>Location</label>
-      <select class="ui dropdown">
+      <select class="ui dropdown" name="location" [(ngModel)]="locationEnum">
         <option value="Ottawa">Ottawa</option>
         <option value="Toronto">Toronto</option>
         <option value="Montreal">Montreal</option>
@@ -41,22 +41,22 @@
     <div class="three fields">
       <div class="field">
         <label>Bedrooms</label>
-        <input type="number" name="bedrooms" placeholder="3" />
+        <input type="number" name="bedrooms" [(ngModel)]="bedrooms" placeholder="3" />
       </div>
       <div class="field">
         <label>Bathrooms</label>
-        <input type="number" name="bathrooms" placeholder="2" />
+        <input type="number" name="bathrooms" [(ngModel)]="bathrooms" placeholder="2" />
       </div>
       <div class="field">
         <label>Other Rooms</label>
-        <input type="number" name="other-rooms" placeholder="2" />
+        <input type="number" name="other-rooms" [(ngModel)]="otherRooms" placeholder="2" />
       </div>
     </div>
     <div class="field">
       <label>Rent</label>
       <div class="ui right labeled input">
         <label for="amount" class="ui label">$</label>
-        <input type="number" placeholder="Amount" name="rent" id="amount" />
+        <input type="number" placeholder="Amount" name="rent" [(ngModel)]="rent" id="amount" />
         <div class="ui basic label">.00</div>
       </div>
     </div>
