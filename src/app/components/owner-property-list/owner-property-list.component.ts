@@ -3,6 +3,8 @@ import { UserAccount } from 'src/app/models/user-account';
 import { AuthService } from 'src/app/services/auth.service';
 import { PropertyService } from 'src/app/services/property.service';
 import { Observable } from 'rxjs';
+import { Property } from 'src/app/models/property';
+
 
 @Component({
   selector: 'app-owner-property-list',
@@ -11,7 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class OwnerPropertyListComponent implements OnInit {
   ownerPropertiesId: [];
-  ownerProperties: Observable<any> = [];
+  ownerProperties: Property[];
   signedIn: Boolean;
 
   constructor(public propertyService: PropertyService) {
