@@ -8,15 +8,14 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./owner-property-list.component.scss']
 })
 export class OwnerPropertyListComponent implements OnInit {
-  currUser: UserAccount;
   ownerProperties: [];
   signedIn: Boolean;
 
   constructor() {
     if (JSON.parse(localStorage.getItem('user')) !== null) {
       this.signedIn = true;
-      this.currUser = JSON.parse(localStorage.getItem('user'));
-      this.ownerProperties = this.currUser.propertyList;
+      let currUser = JSON.parse(localStorage.getItem('user'));
+      this.ownerProperties = currUser.propertyList;
       console.log(this.ownerProperties);
     } else {
       this.signedIn = false;
