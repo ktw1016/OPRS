@@ -33,9 +33,12 @@ export class AuthService {
       });
       this.router.navigate(['/']);
     });
+        console.log("logged in");
   }
 
   logout() {
+    localStorage.clear();
     this.afAuth.auth.signOut();
+    console.log("logged out");
   }
 }
