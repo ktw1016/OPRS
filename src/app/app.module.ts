@@ -22,6 +22,7 @@ import { AddPropertyComponent } from './components/add-property/add-property.com
 import { OwnerPropertyListComponent } from './components/owner-property-list/owner-property-list.component';
 import { PropertyService } from './services/property.service';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { SearchListComponent } from './components/search-list/search-list.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     AccountComponent,
     SearchComponent,
     AddPropertyComponent,
-    OwnerPropertyListComponent
+    OwnerPropertyListComponent,
+    SearchListComponent
   ],
   imports: [
     BrowserModule,

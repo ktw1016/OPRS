@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
 export class PropertyService {
   private propertyCollection: AngularFirestoreCollection<Property>;
   properties: Observable<Property[]>;
+  searchProperties: Property[];
 
   constructor(public afs: AngularFirestore) {
     this.propertyCollection = afs.collection<Property>('properties');
@@ -24,11 +25,21 @@ export class PropertyService {
 
   addProperty(property: Property) {
     const id = this.afs.createId();
+    console.log(id);
     property.propertyId = id;
     this.propertyCollection.doc<Property>(id).set(Object.assign({}, property));
   }
 
   getProperty(id: string): Observable<Property> {
     return this.propertyCollection.doc<Property>(id).valueChanges();
+  }
+
+  setSearchProperties(property: Property[]){
+    this.searchProperties = property;
+    console.log(this.searchProperties)
+  }
+  getSearchProperties(){
+    console.log(this.searchProperties)
+    return this.searchProperties;
   }
 }
