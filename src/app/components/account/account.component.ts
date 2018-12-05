@@ -18,7 +18,7 @@ export class AccountComponent implements OnInit {
   isCustomer: Boolean;
 
   // get the userid of the currently signed in user
-  constructor (public as: AuthService) {
+  constructor (public authService: AuthService) {
   }
 
 

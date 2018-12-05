@@ -7,14 +7,19 @@
       <i class="search icon"></i>Search
     </a>
     <div class="right menu">
-      <div class="item" [routerLink]="['/login']">
+      <div *ngIf="!signedIn" class="item" [routerLink]="['/login']">
         <div class="ui green button">Login</div>
       </div>
-      <div class="item" [routerLink]="['/register']">
+      <div *ngIf="!signedIn" class="item" [routerLink]="['/register']">
         <div class="ui green button">Register</div>
       </div>
-      <div class="item" [routerLink]="['/account']">
+      <div *ngIf="signedIn" class="item" [routerLink]="['/account']">
         <div class="ui green button">Account</div>
+      </div>
+      <div *ngIf="signedIn" class="item">
+        <form class="ui form" (ngSubmit)="logout()">
+          <button class="ui green button" type="submit" [routerLink]="['/login']">Sign Out</button>
+        </form>
       </div>
     </div>
   </div>
