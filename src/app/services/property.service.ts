@@ -20,7 +20,7 @@ export class PropertyService {
   }
 
   getAllProperties(): Observable<Property[]> {
-    return this.properties;
+    return this.propertyCollection.valueChanges();
   }
 
   addProperty(property: Property) {
@@ -34,12 +34,12 @@ export class PropertyService {
     return this.propertyCollection.doc<Property>(id).valueChanges();
   }
 
-  setSearchProperties(property: Property[]){
+  setSearchProperties(property: Property[]) {
     this.searchProperties = property;
-    console.log(this.searchProperties)
+    console.log(this.searchProperties);
   }
-  getSearchProperties(){
-    console.log(this.searchProperties)
+  getSearchProperties() {
+    console.log(this.searchProperties);
     return this.searchProperties;
   }
 }

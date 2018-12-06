@@ -12,6 +12,7 @@ export class PropertyListComponent implements OnInit {
   properties: Property[];
 
   constructor(public propertyService: PropertyService) {
+    this.properties = [];
     this.propertyService.getAllProperties().subscribe((values) => {
       this.properties = values;
     });
