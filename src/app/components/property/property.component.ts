@@ -10,7 +10,17 @@ import { AccountService } from 'src/app/services/account.service';
 })
 export class PropertyComponent implements OnInit {
   @Input() property: Property;
+
+  streetName: string;
+  location: string;
+  propertyType: string;
+  rent: number;
+  bedrooms: number;
+  bathrooms: number;
+  otherRooms: number;
+
   currentUser;
+  isEdit = false;
   isCustomer = false;
 
   constructor(public propertyService: PropertyService, public accountService: AccountService) {
@@ -23,8 +33,23 @@ export class PropertyComponent implements OnInit {
   deleteProperty(event){
     var propertyId = (<HTMLElement>event.path[1].id);
     this.propertyService.deleteProperty(propertyId);
-    //console.log(id);
-    //propertyService.deleteProperty();
+  }
+
+  clickEdit(){
+    this.isEdit = true;
+  }
+
+  clickApply(event){
+    this.editProperty((<HTMLElement>event.path[0].id));
+    this.isEdit = false;
+  }
+  clickCancel(){
+    this.isEdit = false;
+  }
+
+  editProperty(id: string){
+    console.log(id);
+    this.propertyService.editProperty(id, this.streetName, this.location, this.propertyType, this.rent, this.bedrooms, this.bathrooms, this.otherRooms);
   }
 
   ngOnInit() {}

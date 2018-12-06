@@ -24,7 +24,43 @@ export class PropertyService {
     return this.propertyCollection.valueChanges();
   }
 
-  editProperty(){
+  editProperty(id: string, streetName: string, location: string, propertyType, rent: number, bedrooms: number, bathrooms: number, otherRooms: number){
+    console.log(id);
+    if(streetName!==undefined){
+      this.propertyCollection.doc<Property>(id).update({
+        streetName: streetName
+      });
+    }
+    if(location!==undefined){
+      this.propertyCollection.doc<Property>(id).update({
+        location: location
+      });
+    }
+    if(propertyType!==undefined){
+      this.propertyCollection.doc<Property>(id).update({
+        propertyType: propertyType
+      });
+    }
+    if(rent!==undefined){
+      this.propertyCollection.doc<Property>(id).update({
+        rent: rent
+      });
+    }
+    if(bedrooms!==undefined){
+      this.propertyCollection.doc<Property>(id).update({
+        bedrooms: bedrooms
+      });
+    }
+    if(bathrooms!==undefined){
+      this.propertyCollection.doc<Property>(id).update({
+        bathrooms: bathrooms
+      });
+    }
+    if(otherRooms!==undefined){
+      this.propertyCollection.doc<Property>(id).update({
+        otherRooms: otherRooms
+      });
+    }
   }
 
   deleteProperty(id: string){
