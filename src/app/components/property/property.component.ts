@@ -15,10 +15,11 @@ export class PropertyComponent implements OnInit {
   isCustomer = false;
   isOwner = false;
 
-  constructor(public propertyService: PropertyService, public accountService: AccountService) {
+  constructor(
+    public propertyService: PropertyService,
+    public accountService: AccountService
+  ) {}
 
-  }
-  
   deleteProperty() {
     this.propertyService.deleteProperty(this.property.propertyId);
   }
@@ -27,10 +28,12 @@ export class PropertyComponent implements OnInit {
     this.currentUser = JSON.parse(localStorage.getItem('user'));
     if (this.currentUser !== null) {
       this.isCustomer = this.currentUser.type === 'Customer';
-      for (const id of this.currentUser.propertyList) {
-        if (id === this.property.propertyId) {
-          this.isOwner = true;
-          break;
+      if (this.currentUser.type === 'Owner') {
+        for (const id of this.currentUser.propertyList) {
+          if (id === this.property.propertyId) {
+            this.isOwner = true;
+            break;
+          }
         }
       }
     }
