@@ -31,7 +31,7 @@ export class PropertyComponent implements OnInit {
   }
 
   deleteProperty(event){
-    var propertyId = (<HTMLElement>event.path[1].id);
+    var propertyId = (String(<HTMLElement>event.path[1].id));
     this.propertyService.deleteProperty(propertyId);
   }
 
@@ -40,7 +40,7 @@ export class PropertyComponent implements OnInit {
   }
 
   clickApply(event){
-    this.editProperty((<HTMLElement>event.path[0].id));
+    this.editProperty(String(<HTMLElement>event.path[0].id));
     this.isEdit = false;
   }
   clickCancel(){
