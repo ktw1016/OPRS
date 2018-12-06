@@ -22,7 +22,6 @@ import { AddPropertyComponent } from './components/add-property/add-property.com
 import { OwnerPropertyListComponent } from './components/owner-property-list/owner-property-list.component';
 import { PropertyService } from './services/property.service';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import { SearchListComponent } from './components/search-list/search-list.component';
 import { ViewVisitingListComponent } from './components/view-visiting-list/view-visiting-list.component';
 
 @NgModule({
@@ -37,7 +36,6 @@ import { ViewVisitingListComponent } from './components/view-visiting-list/view-
     SearchComponent,
     AddPropertyComponent,
     OwnerPropertyListComponent,
-    SearchListComponent,
     ViewVisitingListComponent
   ],
   imports: [

@@ -47,7 +47,6 @@ export class SearchComponent implements OnInit {
         this.addToResultList(property);
       }
     }
-    this.propertyService.setSearchProperties(this.resultProperties);
   }
 
   addToResultList(property: Property) {
