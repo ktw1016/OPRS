@@ -11,48 +11,30 @@ import { AccountService } from 'src/app/services/account.service';
 export class PropertyComponent implements OnInit {
   @Input() property: Property;
 
-  streetName: string;
-  location: string;
-  propertyType: string;
-  rent: number;
-  bedrooms: number;
-  bathrooms: number;
-  otherRooms: number;
-
   currentUser;
-  isEdit = false;
   isCustomer = false;
+  isOwner = false;
 
   constructor(public propertyService: PropertyService, public accountService: AccountService) {
+
+  }
+  
+  deleteProperty() {
+    this.propertyService.deleteProperty(this.property.propertyId);
+  }
+
+  ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem('user'));
     if (this.currentUser !== null) {
       this.isCustomer = this.currentUser.type === 'Customer';
+      for (const id of this.currentUser.propertyList) {
+        if (id === this.property.propertyId) {
+          this.isOwner = true;
+          break;
+        }
+      }
     }
   }
-
-  deleteProperty(event){
-    var propertyId = (String(<HTMLElement>event.path[1].id));
-    this.propertyService.deleteProperty(propertyId);
-  }
-
-  clickEdit(){
-    this.isEdit = true;
-  }
-
-  clickApply(event){
-    this.editProperty(String(<HTMLElement>event.path[0].id));
-    this.isEdit = false;
-  }
-  clickCancel(){
-    this.isEdit = false;
-  }
-
-  editProperty(id: string){
-    console.log(id);
-    this.propertyService.editProperty(id, this.streetName, this.location, this.propertyType, this.rent, this.bedrooms, this.bathrooms, this.otherRooms);
-  }
-
-  ngOnInit() {}
 
   addToVisitingList() {
     this.currentUser.visitationList.push(this.property.propertyId);

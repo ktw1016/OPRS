@@ -7,13 +7,11 @@ import { AccountComponent } from './components/account/account.component';
 import { SearchComponent } from './components/search/search.component';
 import { AddPropertyComponent } from './components/add-property/add-property.component';
 import { OwnerPropertyListComponent } from './components/owner-property-list/owner-property-list.component';
-import { SearchListComponent } from './components/search-list/search-list.component';
 import { ViewVisitingListComponent } from './components/view-visiting-list/view-visiting-list.component';
 
 const routes: Routes = [
   { path: '', component: PropertyListComponent },
   { path: 'search', component: SearchComponent },
-  { path: 'search-list', component: SearchListComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'account', component: AccountComponent },
