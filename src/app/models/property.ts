@@ -28,6 +28,7 @@ export class Property {
   isActive: boolean;
 
   constructor() {
+    this.photoURLs = [];
     this.isActive = true;
   }
 }

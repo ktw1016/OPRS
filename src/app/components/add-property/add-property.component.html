@@ -62,7 +62,7 @@
     </div>
     <div class="field">
       <label>Photos</label>
-      <input type="file" name="pic" accept="image/*" multiple />
+      <input (change)="uploadImage($event)" type="file" name="pic" accept="image/*" multiple />
     </div>
     <button class="ui fluid primary button" type="submit">Add Property</button>
   </form>
