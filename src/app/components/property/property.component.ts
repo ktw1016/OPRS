@@ -20,6 +20,13 @@ export class PropertyComponent implements OnInit {
     }
   }
 
+  deleteProperty(event){
+    var propertyId = (<HTMLElement>event.path[1].id);
+    this.propertyService.deleteProperty(propertyId);
+    //console.log(id);
+    //propertyService.deleteProperty();
+  }
+
   ngOnInit() {}
 
   addToVisitingList() {

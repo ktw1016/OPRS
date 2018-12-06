@@ -24,11 +24,20 @@ export class PropertyService {
     return this.propertyCollection.valueChanges();
   }
 
+  editProperty(){
+  }
+
+  deleteProperty(id: string){
+    console.log(id);
+    this.propertyCollection.doc<Property>(id).delete();
+  }
+
   addProperty(property: Property) {
     const id = this.afs.createId();
     console.log(id);
     property.propertyId = id;
     this.propertyCollection.doc<Property>(id).set(Object.assign({}, property));
+    console.log(this.propertyCollection.doc<Property>(id));
   }
 
   getProperty(id: string): Observable<Property> {
