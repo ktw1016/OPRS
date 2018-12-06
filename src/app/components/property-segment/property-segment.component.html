@@ -1,0 +1,18 @@
+<div class="ui card">
+  <div class="content">
+    <div class="header">{{ property.streetName }}</div>
+    <div class="meta">
+      <span>{{ property.location }}</span>
+    </div>
+    <div class="description">
+      <h5 class="header">Property Type: {{ property.propertyType }}</h5>
+      <h5 class="header">Rent: ${{ property.rent }}</h5>
+      <h5>Rooms</h5>
+      <ul>
+        <li>{{ property.bedrooms }} Bedrooms</li>
+        <li>{{ property.bathrooms }} Bathrooms</li>
+        <li>{{ property.otherRooms }} Other Rooms</li>
+      </ul>
+    </div>
+  </div>
+</div>
