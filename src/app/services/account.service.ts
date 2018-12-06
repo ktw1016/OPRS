@@ -17,10 +17,16 @@ export class AccountService {
   }
 
   addAccount(account: UserAccount) {
+    localStorage.setItem('user', JSON.stringify(account));
     this.accountCollection.doc<UserAccount>(account.userId).set(Object.assign({}, account));
   }
 
   getAccount(id: string): Observable<UserAccount> {
     return this.accountCollection.doc<UserAccount>(id).valueChanges();
+  }
+
+  updateAccount(account: UserAccount) {
+    localStorage.setItem('user', JSON.stringify(account));
+    this.accountCollection.doc<UserAccount>(account.userId).set(Object.assign({}, account));
   }
 }
