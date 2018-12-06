@@ -4,6 +4,7 @@ import { PropertyService } from 'src/app/services/property.service';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { forEach } from '@angular/router/src/utils/collection';
 import { AccountService } from 'src/app/services/account.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-property',
@@ -16,7 +17,8 @@ export class AddPropertyComponent implements OnInit {
   constructor(
     public propertyService: PropertyService,
     public accountService: AccountService,
-    public storage: AngularFireStorage
+    public storage: AngularFireStorage,
+    public router: Router
   ) {}
 
   ngOnInit() {
@@ -28,6 +30,7 @@ export class AddPropertyComponent implements OnInit {
     this.propertyService.addProperty(this.property);
     this.currentUser.propertyList.push(this.property.propertyId);
     this.accountService.updateAccount(this.currentUser);
+    this.router.navigate(['']);
   }
 
   uploadImage(event) {
