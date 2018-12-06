@@ -21,10 +21,7 @@ import { SearchComponent } from './components/search/search.component';
 import { AddPropertyComponent } from './components/add-property/add-property.component';
 import { OwnerPropertyListComponent } from './components/owner-property-list/owner-property-list.component';
 import { PropertyService } from './services/property.service';
-<<<<<<< HEAD
-=======
 import { AngularFireStorageModule } from '@angular/fire/storage';
->>>>>>> c8417688928ee2b81fd7532beb24f26fc9e16434
 import { SearchListComponent } from './components/search-list/search-list.component';
 
 @NgModule({
