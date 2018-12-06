@@ -1,0 +1,9 @@
+<div class="ui container">
+  <h2 class="header">Property Visitation List</h2>
+  <div class="ui three column grid center aligned">
+    <app-property
+      *ngFor="let property of visitingProperties"
+      [property]="property"
+    ></app-property>
+  </div>
+</div>

@@ -31,10 +31,12 @@ export class AuthService {
       });
       this.router.navigate(['']);
     });
+  //  $route.reload();
   }
 
   logout() {
     localStorage.clear();
     this.afAuth.auth.signOut();
+    this.router.navigate(['']);
   }
 }
