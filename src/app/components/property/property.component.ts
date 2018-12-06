@@ -18,7 +18,7 @@ export class PropertyComponent implements OnInit {
   constructor(public propertyService: PropertyService, public accountService: AccountService) {
 
   }
-
+  
   deleteProperty() {
     this.propertyService.deleteProperty(this.property.propertyId);
   }
