@@ -8,6 +8,7 @@ import { SearchComponent } from './components/search/search.component';
 import { AddPropertyComponent } from './components/add-property/add-property.component';
 import { OwnerPropertyListComponent } from './components/owner-property-list/owner-property-list.component';
 import { SearchListComponent } from './components/search-list/search-list.component';
+import { ViewVisitingListComponent } from './components/view-visiting-list/view-visiting-list.component';
 
 const routes: Routes = [
   { path: '', component: PropertyListComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'account', component: AccountComponent },
   { path: 'add-property', component: AddPropertyComponent },
-  { path: 'view-owner-property-list', component: OwnerPropertyListComponent }
+  { path: 'view-owner-property-list', component: OwnerPropertyListComponent },
+  { path: 'view-visiting-list', component: ViewVisitingListComponent }
 ];
 
 @NgModule({
