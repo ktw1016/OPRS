@@ -40,6 +40,6 @@ export class OwnerPropertyListComponent implements OnInit {
           console.log(values);
         });
     }
-    console.log(this.ownerProperties[0]);
+    //console.log(this.ownerProperties[0]);
   }
 }
