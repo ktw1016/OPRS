@@ -3,38 +3,22 @@
     <img [src]="property.photoURLs[0]" alt="" />
   </div>
   <div class="content">
-    <div class="header">
-      <input *ngIf="isEdit" [(ngModel)]="streetName" placeholder="name">
-      <div *ngIf="!isEdit">{{ property.streetName }}
-      <a class="item" id={{property.propertyId}} (click)="clickEdit()">
-        <i class="material-icons">edit</i>
-      </a>
-      <a class="item" id={{property.propertyId}} (click)="deleteProperty($event)">
-        <i class="material-icons">delete_forever</i>
-      </a>
-      </div>
+    <div class="header">{{ property.streetName }}
+      <i class="trash alternate icon" (click)="deleteProperty()" *ngIf="isOwner"></i>
     </div>
     <div class="meta">
-      <input *ngIf="isEdit" [(ngModel)]="location" placeholder="location">
-      <span *ngIf="!isEdit">{{ property.location }}</span>
+      <span>{{ property.location }}</span>
     </div>
     <div class="description">
-      <input *ngIf="isEdit" [(ngModel)]="propertyType" placeholder="type">
-      <input *ngIf="isEdit" [(ngModel)]="rent" placeholder="rent$">
-      <h5 class="header" *ngIf="!isEdit">Property Type: {{property.propertyType}}</h5>
-      <h5 class="header" *ngIf="!isEdit">Rent: ${{property.rent}}</h5>
+      <h5 class="header">Property Type: {{property.propertyType}}</h5>
+      <h5 class="header">Rent: ${{property.rent}}</h5>
       <h5>Rooms</h5>
       <ul>
-        <input *ngIf="isEdit" [(ngModel)]="bedrooms" placeholder="bedrooms">
-        <input *ngIf="isEdit" [(ngModel)]="bathrooms" placeholder="bathrooms">
-        <input *ngIf="isEdit" [(ngModel)]="otherRooms" placeholder="otherRooms">
-        <li *ngIf="!isEdit">{{ property.bedrooms }} Bedrooms</li>
-        <li *ngIf="!isEdit">{{ property.bathrooms }} Bathrooms</li>
-        <li *ngIf="!isEdit">{{ property.otherRooms }} Other Rooms</li>
+        <li>{{ property.bedrooms }} Bedrooms</li>
+        <li>{{ property.bathrooms }} Bathrooms</li>
+        <li>{{ property.otherRooms }} Other Rooms</li>
       </ul>
     </div>
-    <button *ngIf="isEdit" id={{property.propertyId}} (click)="clickApply($event)" type="submit">Apply</button>
-    <button *ngIf="isEdit" (click)="clickCancel()" type="submit">Cancel</button>
   </div>
   <a class="extra content center aligned" (click)="addToVisitingList()" *ngIf="isCustomer">
     Add to Visiting List

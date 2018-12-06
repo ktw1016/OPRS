@@ -1,5 +1,4 @@
 import { UserAccount } from './user-account';
-import { CreditCard } from './credit-card';
 import { Property } from './property';
 
 export class Customer extends UserAccount {
