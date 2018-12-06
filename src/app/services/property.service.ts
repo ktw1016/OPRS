@@ -23,6 +23,14 @@ export class PropertyService {
     return this.properties;
   }
 
+  editProperty(){
+  }
+
+  deleteProperty(id: string){
+    console.log(id);
+    this.propertyCollection.doc<Property>(id).delete();
+  }
+
   addProperty(property: Property) {
     const id = this.afs.createId();
     console.log(id);

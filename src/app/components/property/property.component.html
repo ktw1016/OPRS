@@ -3,7 +3,11 @@
     <img [src]="property.photoURLs[0]" alt="" />
   </div>
   <div class="content">
-    <div class="header">{{ property.streetName }}</div>
+    <div class="header">{{ property.streetName }}
+      <a class="item" id={{property.propertyId}} (click)="deleteProperty($event)">
+        <i class="material-icons">delete_forever</i>
+      </a>
+    </div>
     <div class="meta">
       <span>{{ property.location }}</span>
     </div>
