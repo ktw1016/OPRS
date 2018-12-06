@@ -5,6 +5,7 @@ import {
 } from '@angular/fire/firestore';
 import { Property } from '../models/property';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class PropertyService {
   properties: Observable<Property[]>;
   searchProperties: Property[];
 
-  constructor(public afs: AngularFirestore) {
+  constructor(public afs: AngularFirestore, public router: Router) {
     this.propertyCollection = afs.collection<Property>('properties');
     this.properties = this.propertyCollection.valueChanges();
   }

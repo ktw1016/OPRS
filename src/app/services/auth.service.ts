@@ -3,8 +3,6 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AccountService } from './account.service';
 import { UserAccount } from '../models/user-account';
-import { Owner } from '../models/owner';
-import { Customer } from '../models/customer';
 
 @Injectable({
   providedIn: 'root'
@@ -31,14 +29,12 @@ export class AuthService {
       this.accountService.getAccount(value.user.uid).subscribe(user => {
         localStorage.setItem('user', JSON.stringify(user));
       });
-      this.router.navigate(['/']);
+      this.router.navigate(['']);
     });
-        console.log("logged in");
   }
 
   logout() {
     localStorage.clear();
     this.afAuth.auth.signOut();
-    console.log("logged out");
   }
 }

@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { Router } from '@angular/router';
 import { UserAccount } from 'src/app/models/user-account';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -14,12 +10,11 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 
 export class AccountComponent implements OnInit {
-  currUser: UserAccount;
+  currUser;
   isCustomer: Boolean;
 
   // get the userid of the currently signed in user
-  constructor (public authService: AuthService) {
-  }
+  constructor (public authService: AuthService) {}
 
 
   ngOnInit() {

@@ -1,38 +1,36 @@
 <div class="ui container">
   <h2 class="header">Your Account</h2>
-  <div class="ui three column grid center aligned">
-    <div *ngIf="isCustomer">
+  <div class="ui segment two column grid" *ngIf="isCustomer">
+    <div class="column">
+      <h3 class="header">{{ currUser.firstName }} {{ currUser.lastName }}</h3>
       <div>
-        <label>Email: </label> {{currUser.userId}}
+        <label class="ui small header">Email: </label> {{ currUser.email }}
       </div>
       <div>
-        <label>First Name: </label> {{currUser.firstName}}
-      </div>
-      <div>
-        <label>Last Name: </label> {{currUser.lastName}}
-      </div>
-      <div>
-        <label>Max Rent: </label> {{currUser.maxRent}}
-      </div>
-      <div>
-        <label>Credit Card: </label> {{currUser.creditCard}}
+        <label class="ui small header">Maximum Rent: </label> ${{
+          currUser.maxRent
+        }}
       </div>
     </div>
-
-    <div *ngIf="!isCustomer">
-      <div>
-        <label>Email: </label> {{currUser.userId}}
-      </div>
-      <div>
-        <label>First Name: </label> {{currUser.firstName}}
-      </div>
-      <div>
-        <label>Last Name: </label> {{currUser.lastName}}
-      </div>
-      <div class="ui green button" [routerLink]="['/view-owner-property-list']">View Property List</div>
+    <div class="column right aligned">
+      <div class="ui blue button">Visiting List</div>
     </div>
+  </div>
 
-
-
+  <div class="ui segment two column grid" *ngIf="!isCustomer">
+    <div class="column">
+      <h3 class="header">{{ currUser.firstName }} {{ currUser.lastName }}</h3>
+      <div>
+        <label class="ui small header">Email: </label> {{ currUser.email }}
+      </div>
+    </div>
+    <div class="column right aligned">
+      <div class="ui blue button" [routerLink]="['/add-property']">
+        Add Property
+      </div>
+      <div class="ui green button" [routerLink]="['/view-owner-property-list']">
+        View Property List
+      </div>
+    </div>
   </div>
 </div>
