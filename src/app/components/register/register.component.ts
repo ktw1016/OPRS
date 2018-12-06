@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
           );
           customer.userId = newUser.user.uid;
           this.accountService.addAccount(customer);
-          this.router.navigate(['/']);
+          this.router.navigate(['']);
         } else {
           const owner = new Owner(
             this.firstName,
@@ -44,7 +44,7 @@ export class RegisterComponent implements OnInit {
           );
           owner.userId = newUser.user.uid;
           this.accountService.addAccount(owner);
-          this.router.navigate(['/']);
+          this.router.navigate(['']);
         }
       });
   }

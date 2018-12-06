@@ -16,6 +16,8 @@ export class Customer extends UserAccount {
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
+    this.type = 'Customer';
     this.maxRent = maxRent;
+    this.visitationList = [];
   }
 }
