@@ -28,6 +28,7 @@ export class AuthService {
     this.afAuth.auth.signInWithEmailAndPassword(email, password).then(value => {
       this.accountService.getAccount(value.user.uid).subscribe(user => {
         localStorage.setItem('user', JSON.stringify(user));
+        location.reload(false);
       });
       this.router.navigate(['']);
     });
